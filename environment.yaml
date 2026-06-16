@@ -1,0 +1,25 @@
+name: hug
+channels:
+  - conda-forge
+  - pip
+dependencies:
+  - python=3.10
+  - pip
+  - plotly
+  - nbformat>=4.2.0
+  - pyyaml
+  - pre-commit
+  - pip:
+      - numpy
+      - opencv-python
+      - transformers
+      - huggingface-hub
+      - omegaconf
+      - rich
+      - roma
+      - safetensors
+      - tyro
+      - viser
+      - xformers<0.0.34
+      - git+https://github.com/lixiny/manotorch.git@a2a70c5
+      # torch, torch-cluster, chumpy: install via instructions in README

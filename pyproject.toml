@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hug"
+version = "0.1.0"
+description = "Human Universal Grasping"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = [
+    "hug",
+    "hug.dataloader",
+    "hug.models",
+    "hug.utils",
+]
+
+[tool.setuptools.package-dir]
+hug = "src"
+"hug.dataloader" = "src/dataloader"
+"hug.models" = "src/models"
+"hug.utils" = "src/utils"
