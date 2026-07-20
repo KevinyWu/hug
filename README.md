@@ -1,29 +1,34 @@
-<p align="center">
-  <img src="assets/img/teaser.webp" alt="HUG teaser" width="100%"/>
-</p>
-
 <h1 align="center">Human Universal Grasping</h1>
 
 <p align="center">
   <a href="https://grasping.io"><img src="https://img.shields.io/badge/Project-Website-2ea44f.svg" alt="Project Website"></a>
-  <a href="https://arxiv.org/abs/2606.17054"><img src="https://img.shields.io/badge/arXiv-2606.17054-b31b1b.svg" alt="arXiv"></a>
   <a href="https://arxiv.org/pdf/2606.17054"><img src="https://img.shields.io/badge/Paper-PDF-1f6feb.svg" alt="Paper PDF"></a>
-  <a href="https://huggingface.co/kevinywu/hug"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Weights-yellow.svg" alt="Weights"></a>
+  <a href="https://arxiv.org/abs/2606.17054"><img src="https://img.shields.io/badge/arXiv-2606.17054-b31b1b.svg" alt="arXiv"></a>
+  <a href="https://huggingface.co/kevinywu/hug"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20HF-Weights-yellow.svg" alt="Weights"></a>
+  <a href="https://github.com/KevinyWu/aria2mano"><img src="https://img.shields.io/badge/GH-Dataset-181717.svg?logo=github" alt="Dataset"></a>
+  <a href="https://github.com/KevinyWu/aria2mesh"><img src="https://img.shields.io/badge/GH-Benchmark-181717.svg?logo=github" alt="Benchmark"></a>
 </p>
 
 Trained solely on real-world human grasping data, HUG generates diverse human hand grasps for any user-selected object in a single RGB-D image captured from a stereo camera.  **HUG works with any stereo camera, anywhere, out of the box.**
 
 <p align="center">
   <img src="assets/img/hug_demo.gif" alt="HUG demo" width="100%"/>
+  <br/>
+  <em>HUG grasps on unseen objects in unseen environments.</em>
 </p>
 
 ## 🗓️ Release
 
 - [x] Paper and website
 - [x] Inference + visualization code
-- [ ] `1M-HUGs` dataset (planned 2026/06/29)
-- [ ] `HUG-Bench` benchmark, assets + sim eval (planned 2026/06/29)
-- [ ] Training code (planned 2026/06/29)
+- [x] [1M-HUGs](https://huggingface.co/datasets/kevinywu/1m-hugs/tree/main) dataset released
+- [x] [HUG-Bench](https://huggingface.co/datasets/kevinywu/hug-bench/tree/main) assets released
+- [x] [aria2mano](https://github.com/KevinyWu/aria2mano) Aria data processing code released!
+- [x] [aria2mesh](https://github.com/KevinyWu/aria2mesh) metric-scale mesh generation code released!
+- [ ] 1M-HUGs dataset creation and visualization code
+- [ ] HUG-Bench simulation code
+- [ ] HUG training code
+- [ ] Support RealSense and ZeD live streaming
 
 ## 📦 Installation
 
@@ -40,11 +45,15 @@ pip install -e .
 # 2) Download required assets listed below
 ```
 
-- **MANO**: [Register](https://mano.is.tue.mpg.de/) → download and unzip the MANO models → copy contents of `mano_v*_*/` to `assets/mano/`
+- **MANO**: [Register](https://mano.is.tue.mpg.de/) → download and unzip the MANO models → copy contents of `mano_v*_*/` to `assets/mano_models/`
 - **DINOv2**: Auto-downloads on first use
 - **HUG weights**: `hf download kevinywu/hug hug_full.safetensors --local-dir checkpoints/`
 
 ## 🚀 Usage
+
+<p align="center">
+  <img src="assets/img/teaser.webp" alt="HUG teaser" width="100%"/>
+</p>
 
 HUG predicts human grasps in MANO form for selected objects in the camera frame. Currently, only inference is supported. We provide sample inputs of one image from each scene in HUG-Bench.
 
