@@ -109,7 +109,7 @@ class GraspFlowModel(nn.Module):
             n_heads=model_cfg.flow_heads,
             dropout=model_cfg.dropout,
             norm_stats=norm_stats,
-            sampling_steps=model_cfg.get("sampling_steps", 50),
+            sampling_steps=model_cfg.get("sampling_steps", 1),
         )
 
     @staticmethod

@@ -47,7 +47,7 @@ def app(
     dataset_path: Path,
     port: int = 8080,
     use_ema: bool = True,
-    sampling_steps: int = 50,
+    sampling_steps: int = 1,
     sample_name: Optional[str] = None,
     num_samples: int = 100,
     max_depth: float = 5.0,

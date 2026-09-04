@@ -179,7 +179,7 @@ class GraspFlowMatching(nn.Module):
         n_heads: int = 8,
         dropout: float = 0.1,
         norm_stats: dict = None,
-        sampling_steps: int = 50,
+        sampling_steps: int = 1,
     ):
         super().__init__()
         self.d_mano = d_mano

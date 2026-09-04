@@ -147,7 +147,7 @@ def main(
     checkpoint_path: Path,
     dataset_path: Path,
     use_ema: bool = True,
-    sampling_steps: int = 50,
+    sampling_steps: int = 1,
     batch_size: int = 32,
     sample_name: Optional[str] = None,
     num_samples: Optional[int] = 256,
